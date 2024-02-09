@@ -62,7 +62,12 @@ echo "Your IP address is: " . $ip_address; // this will display the users IP
 
 ?>
 
-
+<br>
+<br>
+<br>
+<center>
+    <a style="color:grey;" href="https://nabzclan.vip" target="_blank">Made by NabzClan  </a>
+</center>
 
 
   </body>
