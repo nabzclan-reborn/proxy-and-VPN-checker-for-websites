@@ -1,21 +1,30 @@
-
-
-
 <?php
 #V1.0   
 
-# by the nabzclan Team 
+# code by the nabzclan Team 
 
-#give credit to use pls 
+# api by the API Aries Team 
 
 // Function to check if an IP is using a proxy or VPN
 function checkProxyVPN($ip) {
     // API endpoint
-    $apiUrl = "https://cdn.nabzclan.vip/checkers/proxy/ip/?ip=";
+    $apiUrl = "https://api.api-aries.online/v1/checkers/proxy/ip/?ip=";
     
-    $apiRequestUrl = $apiUrl . urlencode($ip) . "&format2";
+    // Set headers for authentication
+    $headers = array(
+        'Type: TOKEN TYPE', // DOCS: https://support.api-aries.online/hc/articles/1/3/2/ip-proxy-checker
+        'APITOKEN: API KEY' // DOCS: https://support.api-aries.online/hc/articles/1/3/2/ip-proxy-checker
+    );
     
-    $response = file_get_contents($apiRequestUrl);
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => $apiUrl . urlencode($ip) . "&format2",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => $headers
+    ));
+    
+    $response = curl_exec($curl);
+    curl_close($curl);
     
     $response = trim($response);
     
