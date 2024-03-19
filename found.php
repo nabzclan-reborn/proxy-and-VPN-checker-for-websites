@@ -9,7 +9,6 @@ require_once 'proxy-checker.php';
 $isProxyVPN = isUserUsingProxyVPN();
 
 if ($isProxyVPN === true) {
-    echo ""; 
 } elseif ($isProxyVPN === false) {
     header("Location: index.php"); # set this to your homepage
 } else {
