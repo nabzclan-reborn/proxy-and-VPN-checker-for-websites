@@ -12,7 +12,6 @@ function checkProxyVPN($ip) {
     
     // Set headers for authentication
     $headers = array(
-        'Type: TOKEN TYPE', // DOCS: https://support.api-aries.online/hc/articles/1/3/2/ip-proxy-checker
         'APITOKEN: API KEY' // DOCS: https://support.api-aries.online/hc/articles/1/3/2/ip-proxy-checker
     );
     
